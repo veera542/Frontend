@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .card-set ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0;
+      }
+
+      .card-set li {
+        flex: 1 1 calc(33.33% - 20px);
+        min-width: 280px;
+      }
+
+      /* Card Styles */
+      .card {
+        background-color: #fff;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        padding: 20px;
+      }
+
+      .card.clickable {
+        cursor: pointer;
+      }
+
+      .card.clickable:hover .card__content,
+      .card.clickable:focus .card__content {
+        background-color: #f4e5d7;
+      }
+
+      .card.clickable:hover .card__title a,
+      .card.clickable:focus .card__title a {
+        color: #4E301F;
+      }
+
+      .card.clickable:hover .card__media img {
+        transform: scale(1.1);
+      }
+
+      .card__media {
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card__media img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Card Content */
+      .card__content {
+        background-color: #FBF9F3;
+        padding: 20px;
+        position: relative;
+        border-radius: 30px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .card__title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 1.25;
+        margin-bottom: 16px;
+        color: #4E301F;
+        position: relative;
+      }
+
+      .card__title a {
+        text-decoration: none;
+        color: #4E301F;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .card__title a:hover,
+      .card__title a:focus {
+        color: #4E301F;
+      }
+
+      .card__title__arrow {
+        width: 11px;
+        height: 13px;
+        position: relative;
+        transition: 0.3s width ease-in-out;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .card__title__arrow svg {
+        fill: #4E301F;
+        width: 9px;
+        height: 13px;
+        inset: 50% 0 auto auto;
+        transform: translateY(-38%);
+        position: absolute;
+
+      }
+
+      /* Underline effect */
+      .card__title__arrow:before {
+        content: "";
+        height: 2px;
+        background-color: #4E301F;
+        border-radius: 3px;
+        display: block;
+        width: 100%;
+        position: absolute;
+        inset: 50% 0 auto 0;
+        transform: translateY(-50%);
+        left:-4px
+      }
+
+      /* Hover & Focus Effects */
+      .card:hover .card__title__arrow,
+      .card:focus .card__title__arrow {
+        width: 25px;
+      }
+
+      .card:hover .card__title__arrow svg,
+      .card:focus .card__title__arrow svg {
+        fill: #4E301F;
+      }
+
+      .card:hover .card__title__arrow:before,
+      .card:focus .card__title__arrow:before {
+        background-color: #4E301F;
+      }
+
+      /* Card Body */
+      .card__body {
+        font-size: 1rem;
+        line-height: 1.5;
+        font-weight: 400;
+        color: #666;
+        transition: all 0.3s linear;
+      }
+      </style>
+</head>
+<body>
+  <div class="card-set">
+    <ul>
+      <li>
+        <div class="card clickable card--clickable">
+          <div class="card__media">
+            <img loading="lazy" src="" alt="Image card" width="276" height="168">
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">
+              <a href="" class="card__cta">
+                <span class="card__title__text">Card title lorem</span>
+                <span class="card__title__arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="13">
+                    <g data-name="Group 14869">
+                      <path d="M4.477 5.484a1 1 0 0 1-.709-.294L.299 1.706a1 1 0 0 1 0-1.414 1 1 0 0 1 1.414 0l3.472 3.486a1 1 0 0 1-.709 1.706Z"></path>
+                      <path d="M0 7.953a1 1 0 0 1 .294-.709l3.484-3.469a1 1 0 0 1 1.414 0 1 1 0 0 1 0 1.414L1.706 8.661A1 1 0 0 1 0 7.952Z"></path>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </h2>
+            <div class="card__body">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card clickable card--clickable">
+          <div class="card__media">
+            <img loading="lazy" src="" alt="Image card 2" width="276" height="168">
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">
+              <a href="" class="card__cta">
+                <span class="card__title__text">Lorem ipsum</span>
+                <span class="card__title__arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="13">
+                    <g data-name="Group 14869">
+                      <path d="M4.477 5.484a1 1 0 0 1-.709-.294L.299 1.706a1 1 0 0 1 0-1.414 1 1 0 0 1 1.414 0l3.472 3.486a1 1 0 0 1-.709 1.706Z"></path>
+                      <path d="M0 7.953a1 1 0 0 1 .294-.709l3.484-3.469a1 1 0 0 1 1.414 0 1 1 0 0 1 0 1.414L1.706 8.661A1 1 0 0 1 0 7.952Z"></path>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </h2>
+            <div class="card__body">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="card clickable card--clickable">
+          <div class="card__media">
+            <img loading="lazy" src="" alt="Image card 3" width="278" height="168">
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">
+              <a href="" class="card__cta">
+                <span class="card__title__text">Dolor sit amet</span>
+                <span class="card__title__arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="13">
+                    <g data-name="Group 14869">
+                      <path d="M4.477 5.484a1 1 0 0 1-.709-.294L.299 1.706a1 1 0 0 1 0-1.414 1 1 0 0 1 1.414 0l3.472 3.486a1 1 0 0 1-.709 1.706Z"></path>
+                      <path d="M0 7.953a1 1 0 0 1 .294-.709l3.484-3.469a1 1 0 0 1 1.414 0 1 1 0 0 1 0 1.414L1.706 8.661A1 1 0 0 1 0 7.952Z"></path>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+            </h2>
+            <div class="card__body">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+</body>
+</html>
