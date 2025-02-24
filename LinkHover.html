@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow</title>
+    <style>
+        .card__cta {
+          position: relative;
+        }
+
+        .card__title__arrow {
+          width: 11px;
+          height: 13px;
+          position: absolute;
+          transition: 0.3s width ease-in-out;
+          bottom: 5px;
+          margin-left: 6px;
+        }
+
+        .card__title__arrow svg {
+          fill: red;
+          width: 6px;
+          inset: 50% 0 auto auto;
+          transform: translateY(-50%);
+          position: absolute;
+          top:8.5px
+        }
+
+        .card__title__arrow:before {
+          content: "";
+          height: 2px;
+          background-color: red;
+          border-radius: 3px;
+          display: block;
+          width: 100%;
+          position: absolute;
+          inset: 50% 0 auto 0;
+          transform: translateY(-50%);
+        }
+
+        .card__title:hover .card__title__arrow,
+        .card__title:focus .card__title__arrow {
+          width: 25px;
+          color: #4E301F;
+        }
+
+        .card__title:hover .card__title__arrow svg,
+        .card__title:focus .card__title__arrow svg {
+          fill: #4E301F;
+        }
+
+        .card__title:hover .card__title__arrow:before,
+        .card__title:focus .card__title__arrow:before {
+          background-color: #4E301F;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="card__content">
+        <h2 class="card__title">
+          <a href="#" class="card__cta">
+              <span class="card__title__text">lorem ipsum</span>
+              <span class="card__title__arrow">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="13">
+                      <g data-name="Group 14869">
+                          <path d="M4.477 5.484a1 1 0 0 1-.709-.294L.299 1.706a1 1 0 0 1 0-1.414 1 1 0 0 1 1.414 0l3.472 3.486a1 1 0 0 1-.709 1.706Z" data-name="Line 228"/>
+                          <path d="M0 7.953a1 1 0 0 1 .294-.709l3.484-3.469a1 1 0 0 1 1.414 0 1 1 0 0 1 0 1.414L1.706 8.661A1 1 0 0 1 0 7.952Z" data-name="Line 229"/>
+                      </g>
+                  </svg>
+              </span>
+          </a>
+      </h2>
+    </div>
+  </body>
+</html>
